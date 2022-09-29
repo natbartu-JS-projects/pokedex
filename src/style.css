@@ -22,3 +22,7 @@ width: 30px;
 height: 30px;
 margin-top: 20px;
 }
+
+h1 {
+  letter-spacing: 3px;
+}
