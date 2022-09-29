@@ -17,6 +17,8 @@ const colors = {
   normal: "#F5F5F5",
 };
 
+const mainTypes = Object.keys(colors);
+
 const fetchPokemons = async () => {
   for (let i = 1; i <= pokemonCaracters; i++) await getPokemon(i);
 };
@@ -36,6 +38,14 @@ const createPokemonCard = (pokemon) => {
 
   const id = pokemon.id.toString().padStart(3, "0");
 
+  const pokeTypes = pokemon.types.map((type) => type.type.name);
+
+  const type = mainTypes.find((type) => pokeTypes.indexOf(type) > -1);
+
+  const color = colors[type];
+
+  pokemonEl.style.backgroundColor = color;
+
   const pokemonInnerHTML = `
   <div class="img-container">
   <img
@@ -46,7 +56,7 @@ const createPokemonCard = (pokemon) => {
   <div class="info">
     <span class="number">${id}</span>
     <h3 class="name">${name}</h3>
-    <small class="type">Type: <span>grass</span></small>
+    <small class="type">Type: <span>${type}</span></small>
   </div>
   `;
 
