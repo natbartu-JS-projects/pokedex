@@ -25,7 +25,32 @@ const getPokemon = async (id) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
+  createPokemonCard(data);
+};
+
+const createPokemonCard = (pokemon) => {
+  const pokemonEl = document.createElement("div");
+  pokemonEl.classList.add("pokemon");
+
+  const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+
+  const pokemonInnerHTML = `
+  <div class="img-container">
+  <img
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"" alt="${name}"
+    alt="pokemon"
+  />
+  </div>
+  <div class="info">
+    <span class="number">#001</span>
+    <h3 class="name">${name}</h3>
+    <small class="type">Type: <span>grass</span></small>
+  </div>
+  `;
+
+  pokemonEl.innerHTML = pokemonInnerHTML;
+
+  pokeContainer.appendChild(pokemonEl);
 };
 
 fetchPokemons();
