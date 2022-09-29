@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'pokemon';
-  src: url('../assets/fonts/Pokemon-Hollow.ttf')
+  src: url('../assets/fonts/Pokemon-Solid.ttf');
 }
 * {
   box-sizing: border-box;
@@ -10,21 +10,27 @@ body {
   background: #efefbb;
   background: linear-gradient(to right, #d4d3dd, #efefbb);
   font-family: "pokemon";
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   margin: 0;
 }
 
-h1 img {
-width: 30px;
-height: 30px;
-margin-top: 20px;
+.title-container{
+  display: flex;
+  align-items: flex-start;
+  margin: 30px;
+}
+
+.title-container img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
 }
 
 h1 {
-  letter-spacing: 3px;
+  letter-spacing: 4px;
 }
 
 .poke-container {
@@ -56,4 +62,21 @@ h1 {
 .pokemon .img-container img {
   max-width: 90%;
   margin-top: 20px;
+ 
+}
+
+.pokemon .info {
+  margin-top: 20px;
+}
+
+.pokemon .info .number {
+  background-color: rgba(0,0,0,0.1);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+.pokemon .info .name {
+  /* margin: 15px 0 7px; */
+  letter-spacing: 1px;
 }
