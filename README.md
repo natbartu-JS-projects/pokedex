@@ -7,3 +7,5 @@ The application is a pokemon card that will display a pokemon image, the pokemon
 
 The data used on this application is from [pokeapi](https://pokeapi.co).
 ## Application Preview
+
+![gif](assets/pokedex.gif)
